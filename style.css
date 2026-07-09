@@ -1,0 +1,137 @@
+:root {
+    --bg-color: #000000;
+    --card-bg: #111111;
+    --text-main: #ffffff;
+    --text-muted: #888888;
+    --border-color: #333333;
+}
+
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+}
+
+body { 
+    background-color: var(--bg-color); 
+    color: var(--text-main); 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    min-height: 100vh; 
+    padding: 2rem; 
+}
+
+header { 
+    text-align: center; 
+    margin-bottom: 3rem; 
+}
+
+header h1 { 
+    font-size: 1.5rem; 
+    font-weight: 600; 
+    letter-spacing: 2px; 
+}
+
+.search-container { 
+    display: flex; 
+    gap: 10px; 
+    width: 100%; 
+    max-width: 400px; 
+    margin-bottom: 2rem; 
+}
+
+input { 
+    flex: 1; 
+    padding: 15px; 
+    background: var(--card-bg); 
+    border: 1px solid var(--border-color); 
+    color: var(--text-main); 
+    border-radius: 8px; 
+    font-size: 1rem; 
+    text-align: center; 
+    text-transform: uppercase; 
+    outline: none; 
+    transition: border 0.3s; 
+}
+
+input:focus { 
+    border-color: var(--text-main); 
+}
+
+button { 
+    padding: 15px 25px; 
+    background: var(--text-main); 
+    color: var(--bg-color); 
+    border: none; 
+    border-radius: 8px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    transition: opacity 0.3s; 
+}
+
+button:hover { 
+    opacity: 0.8; 
+}
+
+#dashboard { 
+    display: none; 
+    width: 100%; 
+    max-width: 800px; 
+    gap: 20px; 
+    flex-direction: column; 
+}
+
+.grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 15px; 
+}
+
+.card { 
+    background: var(--card-bg); 
+    border: 1px solid var(--border-color); 
+    padding: 20px; 
+    border-radius: 12px; 
+    text-align: center; 
+}
+
+.card-title { 
+    font-size: 0.75rem; 
+    color: var(--text-muted); 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    margin-bottom: 8px; 
+}
+
+.card-value { 
+    font-size: 1.25rem; 
+    font-weight: 500; 
+}
+
+.map-container { 
+    width: 100%; 
+    height: 350px; 
+    background: var(--card-bg); 
+    border: 1px solid var(--border-color); 
+    border-radius: 12px; 
+    overflow: hidden; 
+    margin-top: 10px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+iframe { 
+    width: 100%; 
+    height: 100%; 
+    border: none; 
+}
+
+.error { 
+    color: #ff4444; 
+    margin-top: 10px; 
+    display: none; 
+    font-size: 0.9rem; 
+}
