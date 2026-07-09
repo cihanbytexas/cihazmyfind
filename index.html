@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cihaz İzleme Merkezi</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+    <header>
+        <h1>CİHAZ İZLEME SİSTEMİ</h1>
+    </header>
+
+    <div class="search-container">
+        <input type="text" id="trackingCode" placeholder="İZLEME KODUNU GİRİN" maxlength="6">
+        <button id="searchBtn">SORGULA</button>
+    </div>
+    <div id="errorMessage" class="error">Cihaz bulunamadı veya çevrimdışı.</div>
+
+    <div id="dashboard">
+        <div class="grid">
+            <div class="card">
+                <div class="card-title">Cihaz Marka / Model</div>
+                <div class="card-value" id="valDevice">-</div>
+            </div>
+            <div class="card">
+                <div class="card-title">İşletim Sistemi</div>
+                <div class="card-value" id="valOS">-</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Batarya Durumu</div>
+                <div class="card-value" id="valBattery">-%</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Son Güncelleme</div>
+                <div class="card-value" id="valTime">-</div>
+            </div>
+        </div>
+
+        <div class="map-container" id="mapWrapper">
+            <span style="color: var(--text-muted);">Harita Yükleniyor...</span>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
