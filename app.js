@@ -75,10 +75,22 @@ async function sendCommand(commandType, btnElement, btnOriginalText) {
             .insert([{ tracking_code: code, command: commandType, is_executed: false }]);
 
         if (error) throw error;
+        
+        // BAŞARILI GERİ BİLDİRİM: Buton 2 saniyeliğine yeşil onay işareti alır
+        btnElement.innerHTML = "İLETİLDİ ✓";
+        btnElement.style.borderColor = "#34c759";
+        btnElement.style.color = "#34c759";
+        
+        setTimeout(() => {
+            btnElement.innerText = btnOriginalText;
+            btnElement.style.borderColor = "";
+            btnElement.style.color = "";
+            btnElement.disabled = false;
+        }, 2000);
+
     } catch (err) {
         console.error("Komut Hatası:", err);
         alert("Bağlantı hatası: Komut iletilemedi.");
-    } finally {
         btnElement.innerText = btnOriginalText;
         btnElement.disabled = false;
     }
